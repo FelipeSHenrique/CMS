@@ -23,4 +23,7 @@ Route::prefix('painel')->group(function() {
     Route::post('register', 'Admin\Auth\RegisterController@register');
 
     Route::post('logout', 'Admin\Auth\LoginController@logout')->name('logout');
+
+    // O Metodo resource é usado quando criamos uma rota --resource, usando isso todos os metodos HTTP estão nele como o GET, POST, PUT, DELETE, fazendo com que não precisamos criar varias rotas.
+    Route::resource('users', 'Admin\UserController');
 });
